@@ -1,9 +1,9 @@
 #include<iostream>
-#include<vector>
+#include<set>
 using namespace std;
-void subset(string input, string output, vector<string>&ans, int index){
+void subset(string input, string output, set<string>&ans, int index){
     if(index==input.size()){
-        ans.push_back(output);
+        ans.insert(output);
         return ;
     }
     //exclude
@@ -15,9 +15,9 @@ void subset(string input, string output, vector<string>&ans, int index){
 int main(){
     string input="abc";
     string output="";
-    vector<string>ans;
+    set<string>ans;
     subset(input,output,ans,0);
-    vector<string>::iterator it;
+    set<string>::iterator it;
     for(it=ans.begin();it!=ans.end();it++){
         cout<<*it<<endl;
     }
